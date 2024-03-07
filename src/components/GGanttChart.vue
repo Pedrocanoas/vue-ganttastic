@@ -23,7 +23,7 @@
       <!-- the g-gantt-row components go here -->
     </div>
 
-    <g-gantt-bar-tooltip :model-value="showTooltip || isDragging" :bar="tooltipBar">
+    <g-gantt-bar-tooltip :model-value="showTooltip || isDragging" :bar="tooltipBar" :toId="idGantt" >
       <template #default>
         <slot name="bar-tooltip" :bar="tooltipBar" />
       </template>
@@ -61,6 +61,7 @@ export interface GGanttChartProps {
   barStart: string
   barEnd: string
   currentTime?: boolean
+  labelColumn?: boolean
   dateFormat?: string | false
   width?: string
   hideTimeaxis?: boolean
@@ -69,6 +70,7 @@ export interface GGanttChartProps {
   pushOnOverlap?: boolean
   noOverlap?: boolean
   rowHeight?: number
+  idGantt: number
   highlightedUnits?: number[]
   font?: string
 }

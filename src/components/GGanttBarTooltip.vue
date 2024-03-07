@@ -1,5 +1,5 @@
 <template>
-  <teleport to="body">
+  <teleport to={{toId}}>
     <transition name="g-fade" mode="out-in">
       <div
         v-if="modelValue"
@@ -31,7 +31,7 @@ const TOOLTIP_FORMATS = {
   day: "DD. MMM HH:mm",
   date: "DD. MMMM YYYY",
   month: "DD. MMMM YYYY",
-  week: "wo MMMM YYYY"
+  week: "DD. MMMM YYYY"
 } as const
 
 const DEFAULT_DOT_COLOR = "cadetblue"
@@ -39,6 +39,7 @@ const DEFAULT_DOT_COLOR = "cadetblue"
 const props = defineProps<{
   bar: GanttBarObject | undefined
   modelValue: boolean
+  toId: number
 }>()
 
 const { bar } = toRefs(props)

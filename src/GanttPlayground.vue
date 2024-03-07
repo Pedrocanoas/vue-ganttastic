@@ -9,6 +9,7 @@
     width="100%"
     bar-start="beginDate"
     bar-end="endDate"
+    id-gantt="gantt"
     :date-format="format"
     @click-bar="onClickBar($event.bar, $event.e, $event.datetime)"
     @mousedown-bar="onMousedownBar($event.bar, $event.e, $event.datetime)"
