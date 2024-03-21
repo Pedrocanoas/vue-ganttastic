@@ -6,15 +6,13 @@
       </div>
     </slot>
     <div class="g-label-column-rows">
-      <div
-        v-for="({ label }, index) in getChartRows()"
+      <div v-for="({ label , count }, index) in groupedRows()"
         :key="`${label}_${index}`"
         class="g-label-column-row"
         :style="{
           background: index % 2 === 0 ? colors.ternary : colors.quartenary,
-          height: `${rowHeight}px`
-        }"
-      >
+          height: `${rowHeight*count}px`
+        }">
         <slot name="label-column-row" :label="label">
           <span>{{ label }}</span>
         </slot>
@@ -29,6 +27,20 @@ import provideConfig from "../provider/provideConfig.js"
 
 const { font, colors, labelColumnTitle, rowHeight } = provideConfig()
 const getChartRows = provideGetChartRows()
+const groupedRows = () => {
+  const grouped: { label: string; count: number }[] = [];
+  const rows = getChartRows();
+  for (let i = 0; i < rows.length; i++) {
+    const currentLabel = rows[i].label;
+    grouped.push({ label: currentLabel, count: 1 });
+    let j = i + 1
+    while (rows[j] && rows[j].label === currentLabel) {
+      grouped[i].count++;
+      rows.splice(j, 1); // Removendo o item de rows
+    }
+  }
+  return grouped;
+}
 </script>
 
 <style>

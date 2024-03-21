@@ -23,11 +23,6 @@
     <g-gantt-row label="My row to test" :bars="bars1" highlight-on-hover />
     <g-gantt-row label="My another new row to test" highlight-on-hover :bars="bars2" />
     <g-gantt-row label="just another row to test gantt" highlight-on-hover :bars="bars3" />
-    <g-gantt-row
-      label="errors teach us, and debugging makes us stronger!"
-      highlight-on-hover
-      :bars="bars4"
-    />
   </g-gantt-chart>
 
   <button type="button" @click="addBar()">Add bar</button>
@@ -40,15 +35,13 @@ import type { GanttBarObject } from "./types"
 import dayjs from "dayjs"
 
 const format = ref("DD.MM.YYYY HH:mm")
-const chartStart = ref(dayjs().startOf("day").format(format.value))
-const chartEnd = ref(
-  dayjs(chartStart.value, format.value).add(3, "days").hour(12).format(format.value)
-)
+const chartStart = ref(dayjs().subtract(2, "month").format(format.value))
+const chartEnd = ref(dayjs().add(2, "month").format(format.value))
 
 const bars1 = ref<GanttBarObject[]>([
   {
-    beginDate: dayjs().hour(13).startOf("hour").format(format.value),
-    endDate: dayjs().hour(19).startOf("hour").format(format.value),
+    beginDate: dayjs().subtract(1, "month").day(13).startOf("hour").format(format.value),
+    endDate: dayjs().subtract(1, "month").day(19).startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "8621987329",
       label: "I'm in a bundle",
@@ -59,8 +52,8 @@ const bars1 = ref<GanttBarObject[]>([
 
 const bars2 = ref([
   {
-    beginDate: dayjs().hour(13).startOf("hour").format(format.value),
-    endDate: dayjs().hour(19).startOf("hour").format(format.value),
+    beginDate: dayjs().subtract(50, "days").startOf("hour").format(format.value),
+    endDate: dayjs().subtract(35, "days").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "1592311887",
       label: "I'm in a bundle",
@@ -71,8 +64,8 @@ const bars2 = ref([
     }
   },
   {
-    beginDate: dayjs().add(2, "day").hour(0).startOf("hour").format(format.value),
-    endDate: dayjs().add(2, "day").hour(19).startOf("hour").format(format.value),
+    beginDate: dayjs().subtract(25, "days").startOf("hour").format(format.value),
+    endDate: dayjs().add(5, "days").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "7716981641",
       label: "Lorem ipsum dolor",
@@ -83,8 +76,8 @@ const bars2 = ref([
     }
   },
   {
-    beginDate: dayjs().add(1, "day").hour(4).startOf("hour").format(format.value),
-    endDate: dayjs().add(1, "day").hour(16).startOf("hour").format(format.value),
+    beginDate: dayjs().add(1, "month").startOf("hour").format(format.value),
+    endDate: dayjs().add(2, "month").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "9716981641",
       label: "Oh hey",
@@ -100,8 +93,8 @@ const bars2 = ref([
 
 const bars3 = [
   {
-    beginDate: "15.01.2024 08:30",
-    endDate: "20.02.2024 16:45",
+    beginDate: dayjs().subtract(60, "days").startOf("hour").format(format.value),
+    endDate: dayjs().subtract(45, "days").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "9876543210",
       label: "Updated Bundle",
@@ -112,8 +105,8 @@ const bars3 = [
     }
   },
   {
-    beginDate: "20.02.2024 12:00",
-    endDate: "10.03.2024 18:30",
+    beginDate: dayjs().subtract(30, "days").startOf("hour").format(format.value),
+    endDate: dayjs().subtract(5, "days").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "1234567890",
       label: "New Task",
@@ -124,8 +117,8 @@ const bars3 = [
     }
   },
   {
-    beginDate: "25.04.2024 09:15",
-    endDate: "30.04.2024 21:00",
+    beginDate: dayjs().add(10, "days").startOf("hour").format(format.value),
+    endDate: dayjs().add(15, "days").startOf("hour").format(format.value),
     ganttBarConfig: {
       id: "2468135790",
       label: "Greetings",
@@ -139,34 +132,6 @@ const bars3 = [
   }
 ]
 
-const bars4 = [
-  {
-    beginDate: "10.01.2024 08:00",
-    endDate: "15.03.2024 16:30",
-    ganttBarConfig: {
-      id: "9876543210",
-      label: "Novo Pacote",
-      bundle: "pacote3",
-      style: {
-        background: "pink"
-      }
-    }
-  },
-  {
-    beginDate: "05.03.2024 10:00",
-    endDate: "15.04.2024 22:15",
-    ganttBarConfig: {
-      id: "2468135790",
-      label: "hello folks",
-      style: {
-        background: "#ffd700",
-        borderRadius: "10px",
-        color: "black",
-        fontSize: "14px"
-      }
-    }
-  }
-]
 
 const addBar = () => {
   if (bars1.value.some((bar) => bar.ganttBarConfig.id === "test1")) {

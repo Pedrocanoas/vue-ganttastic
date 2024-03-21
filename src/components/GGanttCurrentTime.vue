@@ -5,17 +5,17 @@
       left: `${xDist}px`
     }"
   >
-    <div
-      class="g-grid-current-time-marker"
-      :style="{
-        border: `1px dashed ${colors.markerCurrentTime}`
-      }"
-    />
-    <span class="g-grid-current-time-text" :style="{ color: colors.markerCurrentTime }">
-      <slot name="current-time-label">
-        {{ currentTimeLabel }}
-      </slot>
-    </span>
+    <slot name="current-time-label">
+      <div
+        class="g-grid-current-time-marker"
+        :style="{
+          border: `1px dashed ${colors.markerCurrentTime}`
+        }"
+      />
+      <span class="g-grid-current-time-text" :style="{ color: colors.markerCurrentTime }">
+          {{ currentTimeLabel }}
+        </span>
+    </slot>
   </div>
 </template>
 

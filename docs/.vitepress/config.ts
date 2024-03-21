@@ -26,7 +26,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/zunnzunn/vue-ganttastic' }
+      { icon: 'github', link: 'https://github.com/Pedrocanoas/vue-ganttastic' }
     ]
   }
 })
