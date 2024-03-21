@@ -1,8 +1,8 @@
 {
-  "name": "@infectoone/vue-ganttastic",
-  "version": "2.3.1",
+  "name": "@saonac/vue-ganttastic",
+  "version": "2.5.3",
   "description": "A simple and customizable Gantt chart component for Vue.js",
-  "author": "Marko Zunic (@infectoone)",
+  "author": "Pedro Canoas (@saonac)",
   "scripts": {
     "serve": "vite",
     "build": "npm run build:types && npm run build:lib",
@@ -55,7 +55,7 @@
     "dayjs": "^1.11.5",
     "vue": "^3.2.40"
   },
-  "homepage": "https://zunnzunn.github.io/vue-ganttastic/",
+  "homepage": "https://Pedrocanoas.github.io/vue-ganttastic/",
   "keywords": [
     "gantt",
     "chart",
@@ -68,7 +68,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zunnzunn/vue-ganttastic"
+    "url": "https://github.com/Pedrocanoas/vue-ganttastic"
   },
   "dependencies": {
     "@vueuse/core": "^9.1.1"

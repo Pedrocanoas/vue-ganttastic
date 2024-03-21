@@ -25,14 +25,14 @@ Using Vue 2? Check out [Vue-Ganttastic v1](https://github.com/zunnzunn/vue-gantt
 
 ## Guide and Docs
 
-For further guides and references, check out the [official docs](https://zunnzunn.github.io/vue-ganttastic/getting-started.html).
+For further guides and references, check out the [official docs](https://Pedrocanoas.github.io/vue-ganttastic/getting-started.html).
 
 ## Quickstart
 
 Install using
 
 ```
-npm install @infectoone/vue-ganttastic
+npm install @saonac/vue-ganttastic
 ```
 
 Then, initalize the plugin in the starting point of your app (most likely src/main.js):
@@ -41,7 +41,7 @@ Then, initalize the plugin in the starting point of your app (most likely src/ma
 import { createApp } from "vue"
 import App from "./App.vue"
 ...
-import ganttastic from '@infectoone/vue-ganttastic'
+import ganttastic from '@saonac/vue-ganttastic'
 ...
 createApp(App)
   .use(ganttastic)
@@ -121,8 +121,16 @@ Then, place the tarball in some other test project and install the package from 
 npm install <name_of_the_package>.tgz
 ```
 
+## Screenshots
 
-## About
+![image](https://user-images.githubusercontent.com/28678851/148191571-76bd8d61-4583-4538-8c59-cc2915494890.png)
+
+![image](https://user-images.githubusercontent.com/28678851/148191529-b50c0d17-bcc1-4a78-9d2c-ff2a36b03f52.png)
+
+![image](https://user-images.githubusercontent.com/28678851/148191757-a2520dce-aeed-43df-87b2-3a64e225f9e7.png)
+
+
+## Credits
 
 **License** [MIT](https://choosealicense.com/licenses/mit/)  
 **Author**: Marko Žunić, BSc  
@@ -140,11 +148,3 @@ In case you found the library useful, a little tip would be much appreciated!
 
 BTC address:  
 ![image](https://user-images.githubusercontent.com/28678851/233090745-a0a6d8a4-6df6-4b82-ac0c-90e69551786e.png)
-
-## Screenshots
-
-![image](https://user-images.githubusercontent.com/28678851/148191571-76bd8d61-4583-4538-8c59-cc2915494890.png)
-
-![image](https://user-images.githubusercontent.com/28678851/148191529-b50c0d17-bcc1-4a78-9d2c-ff2a36b03f52.png)
-
-![image](https://user-images.githubusercontent.com/28678851/148191757-a2520dce-aeed-43df-87b2-3a64e225f9e7.png)
