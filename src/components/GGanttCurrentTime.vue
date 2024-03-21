@@ -13,8 +13,8 @@
         }"
       />
       <span class="g-grid-current-time-text" :style="{ color: colors.markerCurrentTime }">
-          {{ currentTimeLabel }}
-        </span>
+        {{ currentTimeLabel }}
+      </span>
     </slot>
   </div>
 </template>

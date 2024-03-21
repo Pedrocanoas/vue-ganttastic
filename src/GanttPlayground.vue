@@ -132,7 +132,6 @@ const bars3 = [
   }
 ]
 
-
 const addBar = () => {
   if (bars1.value.some((bar) => bar.ganttBarConfig.id === "test1")) {
     return
